@@ -102,7 +102,7 @@ export default ({posts}
               <PostContainer key={index} featured={post.featured}>
                 <Link to={`/blog/${post.id}`}>
                   <Post className="group" as="a" href={post.url}>
-                    <Image imageSrc={`http://localhost:1337${post.attributes.coverImage.data.attributes.url}`} />
+                    <Image imageSrc={`http://somesh-api.contentecho.in:1337${post.attributes.coverImage.data.attributes.url}`} />
                     <Info>
                       <Category>{post.category}</Category>
                       <CreationDate>{post.attributes.publishedDate}</CreationDate>
