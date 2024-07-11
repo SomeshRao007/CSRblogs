@@ -1,5 +1,5 @@
 resource "aws_ecs_task_definition" "HelloTD2" {
-  family                   = "React-task"
+  family                   = "React-taskv5"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
   execution_role_arn       = aws_iam_role.iam-role.arn
@@ -13,8 +13,12 @@ resource "aws_ecs_task_definition" "HelloTD2" {
       essential = true
       portMappings = [
         {
-          containerPort = 3000
-          hostPort      = 3000
+          containerPort = 80
+          hostPort      = 80
+        },
+        {
+          containerPort = 443
+          hostPort      = 443
         }
       ]
 
@@ -23,5 +27,5 @@ resource "aws_ecs_task_definition" "HelloTD2" {
 }
 
 data "aws_ecs_task_definition" "HelloTD2" {
-  task_definition = aws_ecs_task_definition.HelloTD.family
+  task_definition = aws_ecs_task_definition.HelloTD2.family
 }

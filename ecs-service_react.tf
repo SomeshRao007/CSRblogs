@@ -1,9 +1,9 @@
 resource "aws_ecs_service" "nodeapp2" {
   name = "react-app"
-  #launch_type                        = "FARGATE"
-  #platform_version                   = "LATEST"
+  #   launch_type                        = "FARGATE"
+  #   platform_version                   = "LATEST"
   cluster                            = aws_ecs_cluster.HelloECS.id
-  task_definition                    = aws_ecs_task_definition.HelloTD.arn
+  task_definition                    = aws_ecs_task_definition.HelloTD2.arn
   scheduling_strategy                = "REPLICA"
   deployment_minimum_healthy_percent = 100
   deployment_maximum_percent         = 200

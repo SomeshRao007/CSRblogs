@@ -11,7 +11,7 @@ import useFetch from "hooks/useFetch";
 
 export default function App() {
 
-  const {loading, error, data} = useFetch('http://somesh-api.contentecho.in:1337/api/blogs?populate=*')
+  const {loading, error, data} = useFetch('https://somesh-api.contentecho.in/api/blogs?populate=*')
 
   if (loading) return <p>wait its loading!</p>
   // if (error) return <p>checkout there is an error in your code!</p>

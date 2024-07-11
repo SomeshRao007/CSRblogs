@@ -7,7 +7,7 @@ resource "aws_instance" "ec2-node-server" {
     volume_type = "gp3"
   }
   tags = {
-    Name = "Somesh-Ubuntu_debian_based"
+    Name = "CSR-Ubuntu_debian_based"
   }
   provisioner "remote-exec" {
     inline = [
